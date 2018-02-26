@@ -1,6 +1,6 @@
 {
   "name": "MZDownloadManager",
-  "version": "3.2",
+  "version": "3.3",
   "summary": "NSURLSession based download manager.",
   "description": "Download large files even in background, download multiple files, resume interrupted downloads.",
   "homepage": "https://github.com/mzeeshanid/MZDownloadManager",
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/mzeeshanid/MZDownloadManager.git",
-    "tag": "3.2"
+    "tag": "3.3"
   },
   "social_media_url": "https://twitter.com/mzeeshanid",
   "platforms": {
