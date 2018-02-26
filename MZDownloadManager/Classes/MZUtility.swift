@@ -33,7 +33,7 @@ open class MZUtility: NSObject {
             fileDocDirectoryPath = "\(filePath.deletingLastPathComponent)/\(suggestedFileName)" as NSString?
         }
         
-        return fileManger.fileExists(atPath: "\(baseFilePath)/\(fileDocDirectoryPath!)" as String)
+        return fileManger.fileExists(atPath: "\(baseFilePath)\(fileDocDirectoryPath!)" as String)
     }
 
     open class func getUniqueFileNameWithPath(_ filePath : NSString) -> NSString {
