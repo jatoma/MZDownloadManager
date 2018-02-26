@@ -17,6 +17,24 @@ open class MZUtility: NSObject {
     open static let baseFilePath: String = {
         return (NSHomeDirectory() as NSString).appendingPathComponent("Documents") as String
     }()
+    
+    open class func fileAlreadyExist(_ filePath : NSString) -> Bool {
+        let fullFileName        : NSString = filePath.lastPathComponent as NSString
+        let fileName            : NSString = fullFileName.deletingPathExtension as NSString
+        let fileExtension       : NSString = fullFileName.pathExtension as NSString
+        let suggestedFileName   : NSString = fileName
+        let fileManger          : FileManager = FileManager.default
+        
+        var fileDocDirectoryPath : NSString?
+        
+        if fileExtension.length > 0 {
+            fileDocDirectoryPath = "\(filePath.deletingLastPathComponent)/\(suggestedFileName).\(fileExtension)" as NSString?
+        } else {
+            fileDocDirectoryPath = "\(filePath.deletingLastPathComponent)/\(suggestedFileName)" as NSString?
+        }
+        
+        return fileManger.fileExists(atPath: fileDocDirectoryPath! as String)
+    }
 
     open class func getUniqueFileNameWithPath(_ filePath : NSString) -> NSString {
         let fullFileName        : NSString = filePath.lastPathComponent as NSString
