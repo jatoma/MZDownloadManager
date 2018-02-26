@@ -15,7 +15,7 @@ open class MZUtility: NSObject {
     }()
     
     open static let baseFilePath: String = {
-        return (NSHomeDirectory() as NSString).appendingPathComponent("Documents") as String
+        return (NSHomeDirectory() as NSString).appendingPathComponent("Documents/Lecturer") as String
     }()
     
     open class func fileAlreadyExist(_ filePath : NSString) -> Bool {
