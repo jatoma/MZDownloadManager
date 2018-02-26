@@ -348,6 +348,17 @@ extension MZDownloadManager: URLSessionDownloadDelegate {
 
 extension MZDownloadManager {
     
+    public func removeAllFiles() {
+        let fileManager = FileManager.default
+        
+        do {
+            try fileManager.removeItem(atPath: MZUtility.baseFilePath)
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
+    }
+    
     public func addDownloadTask(_ fileName: String, fileURL: String, destinationPath: String) {
         
         let url = URL(string: fileURL as String)!

@@ -32,6 +32,8 @@ class MZAvailableDownloadsViewController: UITableViewController {
         availableDownloadsArray.append("https://www.dropbox.com/s/cw7wfyaic9rtzwd/GCDExample-master.zip?dl=1")
         
         self.setUpDownloadingViewController()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

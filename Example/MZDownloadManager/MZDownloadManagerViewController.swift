@@ -31,7 +31,7 @@ class MZDownloadManagerViewController: UITableViewController {
         
         let aString: NSString = "temp" as NSString
         aString.appendingPathComponent("")
-        
+        downloadManager.removeAllFiles()
     }
     
     override func didReceiveMemoryWarning() {
