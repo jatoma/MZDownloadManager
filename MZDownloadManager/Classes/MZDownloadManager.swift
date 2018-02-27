@@ -364,6 +364,13 @@ extension MZDownloadManager {
         let url = URL(string: fileURL as String)!
         let request = URLRequest(url: url)
         
+        let tasks = self.downloadTasks() // check if we already download file
+        for task in tasks {
+            if let currentURL = task.currentRequest?.url, currentURL == url {
+                return
+            }
+        }
+        
         let downloadTask = sessionManager.downloadTask(with: request)
         downloadTask.taskDescription = [fileName, fileURL, destinationPath].joined(separator: ",")
         downloadTask.resume()
